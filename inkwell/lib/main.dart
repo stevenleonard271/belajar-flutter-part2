@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Latihan Membuat Button'),
+          title: Text('Latihan Membuat Button dengan InkWell'),
         ),
         body: Center(
           child: Column(
