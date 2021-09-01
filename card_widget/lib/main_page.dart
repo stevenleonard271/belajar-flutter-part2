@@ -58,6 +58,7 @@ class MainPage extends StatelessWidget {
                           (50 + MediaQuery.of(context).size.height * 0.35),
                           20,
                           20),
+                          // color: Colors.blue,
                       child: Column(
                         children: <Widget>[
                           Center(
