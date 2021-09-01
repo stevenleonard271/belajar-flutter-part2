@@ -63,7 +63,7 @@ class MainPage extends StatelessWidget {
                         children: <Widget>[
                           Center(
                             child: Text(
-                              'Macbook Pro With M1 Chip Processor',
+                              'Macbook Pro 2021 With M1 Chip Processor',
                               style: TextStyle(
                                   color: Color(0xFFF56D5D), fontSize: 25),
                               maxLines: 2,
