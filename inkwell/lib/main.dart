@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 //Membuat button sendiri dengan gradasi menggunakan InkWell
 
-//Ink well membuat button ketika diklik dapat memberikan respon berupa splash
+//Ink well membuat button ketika diklik dapat memberikan respon berupa splash seperti air yang menetes
 void main() {
   runApp(MyApp());
 }
