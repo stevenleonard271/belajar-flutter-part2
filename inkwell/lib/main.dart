@@ -34,24 +34,27 @@ class MyApp extends StatelessWidget {
                   width: 150,
                   height: 40,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                        colors: [Colors.purple, Colors.pink],
-                        begin: Alignment.center,
-                        end: Alignment.bottomCenter,
-                      )),
-                  child: Material(
                     borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                        colors: [Colors.purple, Colors.pink],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter),
+                  ),
+                  child: Material(
+                    // elevation: 5,
                     color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(20),
                     child: InkWell(
                       borderRadius: BorderRadius.circular(20),
-                      splashColor: Colors.amber,
                       onTap: () {},
+                      splashColor: Colors.amber,
                       child: Center(
                           child: Text(
-                        'My Button',
+                        'Button',
                         style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.w600),
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
                       )),
                     ),
                   ),
