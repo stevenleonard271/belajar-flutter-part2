@@ -6,27 +6,31 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   String durasi = "00:00:00";
-  AudioPlayer audioPlayer = AudioPlayer();
+  AudioPlayer audioPlayer;
+
   _MyAppState() {
+    //Initialize audio player
     audioPlayer = AudioPlayer();
     audioPlayer.onAudioPositionChanged.listen((duration) {
       setState(() {
         durasi = duration.toString();
       });
     });
+    // What to do after audio played
     audioPlayer.setReleaseMode(ReleaseMode.LOOP);
   }
 
   void playSound(String url) async {
-    await audioPlayer.play(url, isLocal: true);
+    //Fast forward
+    await audioPlayer.seek(Duration(seconds: 30));
+    //Play sound from url
+    await audioPlayer.play(url);
   }
 
   void pauseSound() async {
@@ -51,11 +55,12 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
+            children: [
               RaisedButton(
                 child: Text('Play'),
                 onPressed: () {
-                  playSound('assets/coffindance.mp3');
+                  playSound(
+                      "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3");
                 },
               ),
               RaisedButton(
@@ -78,7 +83,7 @@ class _MyAppState extends State<MyApp> {
               ),
               Text(
                 durasi,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               )
             ],
           ),
